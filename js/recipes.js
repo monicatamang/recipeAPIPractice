@@ -10,19 +10,25 @@ function mealGenerator(e) {
             let mealsImage = mealsObject.meals[0].strMealThumb;
             let mealsInstructions = mealsObject.meals[0].strInstructions;
             let mealsVideo = mealsObject.meals[0].strYoutube;
+            // let mealsIngredients = document.getElementById(`mealsIngredientsContainer`);
             document.getElementById(`mealsTitle`).innerText = mealsTitle;
             document.getElementById(`mealsCategory`).innerText = mealsCategory;
             document.getElementById(`mealsArea`).innerText = mealsArea;
             document.getElementById(`mealsImageContainer`).innerHTML = `<img src="${mealsImage}">`;
             document.getElementById(`mealsInstructions`).innerText = mealsInstructions;
             document.getElementById(`mealsVideo`).innerHTML = `<a href="${mealsVideo}">Click Here to Watch a Video Tutorial</a>`;
-            let mealsObjectEntries = Object.entries(mealsObject.meals[0]);
-            for (let i = 10; i < mealsObjectEntries.length - 3; i++) {
-                for (let j = 0; j < 2; j++) {
-                    let mealsIngredients = document.getElementById(`mealsIngredients`);
-                    mealsIngredients.innerText = mealsObjectEntries[i][j];
-                }
-            }
+            // let mealsObjectValues = Object.values(mealsObject.meals[0]);
+            // for (let i = 9; i < mealsObjectValues.length - 4; i++) {
+            //     let mealsValue = `<p>${mealsObjectValues[i]}</p>`;
+            //     mealsIngredients.innerHTML += mealsValue;
+            // }
+            // let mealsObjectEntries = Object.entries(mealsObject.meals[0]);
+            // for (let i = 9; i < mealsObjectEntries.length - 4; i++) {
+            //     for (let j = 0; j < 2; j++) {
+            //         console.log(mealsObjectEntries[i][j]);
+            //         mealsIngredients.append(mealsObjectEntries[i][j]);
+            //     }
+            // }
         }
     }
 
@@ -31,6 +37,8 @@ function mealGenerator(e) {
     ajax.send();
 }
 
+let mealsIngredients = document.getElementById(`mealsIngredientsContainer`);
+// mealsIngredients.style.display = `none`;
 let mealGeneratorButton = document.querySelector(`button`);
 mealGeneratorButton.addEventListener(`click`, mealGenerator);
 

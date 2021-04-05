@@ -3,8 +3,8 @@ function userFirstName(e) {
     Cookies.set(`Recipe API First Name`, firstName);
 }
 
-let signupButton = document.getElementById(`signupInput`);
-signupButton.addEventListener(`click`, userFirstName);
+let loginButton = document.getElementById(`loginInput`);
+loginButton.addEventListener(`click`, userFirstName);
 
 // ----------- Notes ----------
 // I orginally had defined 'firstName' above line 6 and tried to use that variable to create a cookie. This had resulted in an error

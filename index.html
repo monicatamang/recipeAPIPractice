@@ -10,14 +10,19 @@
 <body>
     <header>
         <h1>ReciPlease</h1>
-        <p>Choose from 10,000+ recipes to get inspired and become a master chef in your kitchen!</p>
+        <p>Create meals from 10,000+ recipes and become a master chef in your kitchen</p>
     </header>
     <main>
+        <div id="mealCarousel">
+            <img src="/images/koreanBBQBeefBowl.png" alt="A Korean Barbeque Beef Bowl.">
+            <img src="/images/salad.png" alt="A green salad made with lettuce and cherry tomatos.">
+            <img src="/images/tofuStirFry.png" alt="Stir fry in a bowl.">
+        </div>
         <form action="/pages/recipes.html">
-            <input type="text" id="firstNameInput" placeholder="First Name*" required>
-            <input type="submit" id="signupInput" value="SIGNUP" required onlick="firstName(`Monica`)">
+            <input type="text" class="loginField" id="firstNameInput" placeholder="First Name*" required>
+            <input type="submit" class="loginField" id="loginInput" value="Login" required>
+            <p>New user? <a href="/pages/recipes.html">Create an account</a></p>
         </form>
-        <p>Already have an account? <a href="/pages/recipes.html">Login Here</a></p>
     </main>
     <footer>
         <p>Copyright &copy; 2021 ReciPlease</p>

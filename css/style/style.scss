@@ -1,0 +1,43 @@
+@import "../partials/header";
+@import "../partials/footer";
+
+main {
+    @include displayGridCenter;
+    min-height: 70vh;
+
+    form {
+        display: grid;
+        align-self: end;
+        row-gap: 20px;
+        margin-bottom: 5vh;
+
+        .loginField {
+            font-family: $bodyFont;
+            font-size: 1rem;
+            padding: 5%;
+            border-radius: 3px;
+        }
+
+        #firstNameInput {
+            border: 1px solid $accentColor;
+        }
+
+        #loginInput {
+            font-weight: 600;
+            color: white;
+            background: $accentColor;
+            border: none;
+            box-shadow: 1px 1px 3px rgba(128, 128, 128, 0.5);
+
+            &:active {
+                box-shadow: none;
+            }
+        }
+
+        p {
+            a {
+                color: $accentColor;
+            }
+        }
+    }
+}

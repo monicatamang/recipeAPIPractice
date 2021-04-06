@@ -1,0 +1,146 @@
+@import "../partials/header";
+@import "../partials/footer";
+
+main {
+    @include displayGridCenter();
+    text-align: center;
+    row-gap: 10px;
+    margin-top: 2vh;
+
+    >p {
+        font-size: 1.4rem;
+        font-weight: 400;
+        padding: 0% 5%;
+    }
+
+    button {
+        margin-top: 3vh;
+        font-family: $bodyFont;
+        font-size: 1rem;
+        font-weight: 600;
+        padding: 3%;
+        background: $accentColor;
+        border: none;
+        border-radius: 3px;
+        color: white;
+        box-shadow: 1px 1px 5px rgba(128, 128, 128, 0.5);
+
+        &:active {
+            box-shadow: none;
+        }
+    }
+
+    #mealsGeneratorContainer {
+        @include displayGridCenter();
+        row-gap: 20px;
+        min-height: 55vh;
+        margin-top: 2vh;
+
+        h1 {
+            color: $accentColor;
+            font-weight: 800;
+            text-transform: capitalize;
+            font-size: 1.3rem;
+            padding: 0% 10%;
+        }
+
+        #categoryAndAreaContainer {
+            @include displayGridCenter();
+            grid-template-columns: auto auto auto;
+            column-gap: 10px;
+
+            p {
+                font-size: 1.1rem;
+            }
+
+            #divider {
+                display: none;
+            }
+        }
+
+        #mealsImageContainer {
+            position: relative;
+            width: 80vw;
+
+            img {
+                width: 100%;
+                border-radius: 3px;
+            }
+        }
+
+        #mealsVideo {
+            @include displayGridCenter();
+            background: rgba(244, 249, 244, 0.1);
+            border-radius: 3px;
+            width: 80vw;
+            box-shadow: 1px 1px 5px rgba(128, 128, 128, 0.5);
+
+            &:active {
+                box-shadow: none;
+            }
+
+            a {
+                text-decoration: none;
+                color: rgba(0, 0, 0, 0.8);
+                font-weight: 600;
+                width: 100%;
+                padding: 5% 0%;
+            }
+        }
+
+        #tabs {
+            @include displayGridCenter();
+            grid-template-columns: auto auto;
+            column-gap: 25px;
+            display: none;
+
+            h1 {
+                color: rgba(0, 0, 0, 0.50);
+            }
+
+            #ingredientsTitle {
+                color: $accentColor;
+            }
+        }
+
+        #ingredientsAndMeasureContainer {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            width: 90%;
+            text-align: left;
+
+            p {
+                font-size: 0.95rem;
+                margin: 5% 0%; 
+                text-transform: capitalize;
+            }
+        }
+
+        #mealsInstructions {
+            text-align: left;
+            padding: 0% 10%;
+            display: none;
+            font-size: 0.95rem;
+        }
+    }
+}
+
+nav {
+    @include displayGridCenter();
+    grid-template-columns: repeat(3, 1fr);
+    position: fixed;
+    bottom: 0;
+    min-height: 5vh;
+    width: 100%;
+    padding: 5% 0%;
+    background: white;
+    text-align: center;
+    box-shadow: 1px 1px 5px rgba(128, 128, 128, 0.5);
+
+    a {
+        color: $accentColor;
+        text-decoration: none;
+        width: 100%;
+        height: 100%;
+    }
+}

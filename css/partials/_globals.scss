@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Raleway:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700;800&display=swap');
 
 $titleFont: 'Playfair Display', serif;
 $bodyFont: 'Raleway', sans-serif;
 $accentColor: #74b49b;
+$lightColor: #a7d7c5;
+$darkColor: #5c8d89;
+$neutralColor: #f4f9f4;
 
 @mixin displayGridCenter {
     display: grid;

@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Raleway:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700;800&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +10,7 @@ body {
   max-width: 100vw;
 }
 
-header {
+#mobileLoginHeader {
   display: -ms-grid;
   display: grid;
   place-items: center;
@@ -20,19 +21,47 @@ header {
   text-align: center;
 }
 
-header h1 {
+#mobileLoginHeader h1 {
   font-family: "Playfair Display", serif;
 }
 
-footer {
+#mobileLoginHeader p {
+  color: grey;
+}
+
+#mobileRecipesHeader {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
+  min-height: 10vh;
+}
+
+#mobileRecipesHeader h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.4rem;
+}
+
+#mobileRecipesHeader a {
+  color: #74b49b;
+  font-weight: 500;
+}
+
+#mobileLoginFooter, #mobileRecipesFooter {
   display: -ms-grid;
   display: grid;
   place-items: center;
   min-height: 10vh;
 }
 
-footer p {
+#mobileLoginFooter p, #mobileRecipesFooter p {
   font-size: 0.9rem;
+}
+
+#mobileRecipesFooter {
+  min-height: 20vh;
+  margin-top: 5vh;
 }
 
 main {
@@ -40,6 +69,11 @@ main {
   display: grid;
   place-items: center;
   min-height: 70vh;
+}
+
+main img {
+  margin-top: 3vh;
+  width: 70vw;
 }
 
 main form {

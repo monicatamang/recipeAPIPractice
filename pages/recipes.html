@@ -5,64 +5,96 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ReciPlease | Recipes</title>
+    <script src="https://kit.fontawesome.com/79c5ac932a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/recipes/recipes.css">
 </head>
 <body>
-    <header>
-        <a href="/index.html">Back</a>
+    <header id="mobileRecipesHeader">
         <h1>ReciPlease</h1>
-        <p id="greetingMessage"></p>
+        <div class="spacer"></div>
+        <a href="/index.html">Logout</a>
     </header>
-    <main id="mealsGeneratorContainer">
-        <h1 id="mealsTitle"></h1>
-        <p id="mealsCategory"></p>
-        <p id="mealsArea"></p>
-        <div id="mealsImageContainer"></div>
-        <article id="ingredientsAndMeasureContainer">
-            <p id="ingredient1"></p>
-            <p id="ingredient2"></p>
-            <p id="ingredient3"></p>
-            <p id="ingredient4"></p>
-            <p id="ingredient5"></p>
-            <p id="ingredient6"></p>
-            <p id="ingredient7"></p>
-            <p id="ingredient8"></p>
-            <p id="ingredient9"></p>
-            <p id="ingredient10"></p>
-            <p id="ingredient11"></p>
-            <p id="ingredient12"></p>
-            <p id="ingredient13"></p>
-            <p id="ingredient14"></p>
-            <p id="ingredient15"></p>
-            <p id="ingredient16"></p>
-            <p id="ingredient17"></p>
-            <p id="ingredient18"></p>
-            <p id="ingredient19"></p>
-            <p id="ingredient20"></p>
-            <p id="measure1"></p>
-            <p id="measure2"></p>
-            <p id="measure3"></p>
-            <p id="measure4"></p>
-            <p id="measure5"></p>
-            <p id="measure6"></p>
-            <p id="measure7"></p>
-            <p id="measure8"></p>
-            <p id="measure9"></p>
-            <p id="measure10"></p>
-            <p id="measure11"></p>
-            <p id="measure12"></p>
-            <p id="measure13"></p>
-            <p id="measure14"></p>
-            <p id="measure15"></p>
-            <p id="measure16"></p>
-            <p id="measure17"></p>
-            <p id="measure18"></p>
-            <p id="measure19"></p>
-            <p id="measure20"></p>
+    <main>
+        <p id="greetingMessage"></p>
+        <button>Get a random recipe</button>
+        <article id="mealsGeneratorContainer">
+            <h1 id="mealsTitle"></h1>
+            <div id="categoryAndAreaContainer">
+                <p id="mealsCategory"></p>
+                <p id="divider">|</p>
+                <p id="mealsArea"></p>
+            </div>
+            <div id="mealsImageContainer"></div>
+            <div id="mealsVideo"></div>
+            <div id="tabs">
+                <h1 id="ingredientsTitle">Ingredients</h1>
+                <h1 id="instructionsTitle">Instructions</h1>
+            </div>
+            <article id="ingredientsAndMeasureContainer">
+                <div id="ingredients">
+                    <p id="ingredient1"></p>
+                    <p id="ingredient2"></p>
+                    <p id="ingredient3"></p>
+                    <p id="ingredient4"></p>
+                    <p id="ingredient5"></p>
+                    <p id="ingredient6"></p>
+                    <p id="ingredient7"></p>
+                    <p id="ingredient8"></p>
+                    <p id="ingredient9"></p>
+                    <p id="ingredient10"></p>
+                    <p id="ingredient11"></p>
+                    <p id="ingredient12"></p>
+                    <p id="ingredient13"></p>
+                    <p id="ingredient14"></p>
+                    <p id="ingredient15"></p>
+                    <p id="ingredient16"></p>
+                    <p id="ingredient17"></p>
+                    <p id="ingredient18"></p>
+                    <p id="ingredient19"></p>
+                    <p id="ingredient20"></p>
+                </div>
+                <div class="spacer"></div>
+                <div id="measurements">
+                    <p id="measure1"></p>
+                    <p id="measure2"></p>
+                    <p id="measure3"></p>
+                    <p id="measure4"></p>
+                    <p id="measure5"></p>
+                    <p id="measure6"></p>
+                    <p id="measure7"></p>
+                    <p id="measure8"></p>
+                    <p id="measure9"></p>
+                    <p id="measure10"></p>
+                    <p id="measure11"></p>
+                    <p id="measure12"></p>
+                    <p id="measure13"></p>
+                    <p id="measure14"></p>
+                    <p id="measure15"></p>
+                    <p id="measure16"></p>
+                    <p id="measure17"></p>
+                    <p id="measure18"></p>
+                    <p id="measure19"></p>
+                    <p id="measure20"></p>
+                </div>
+            </article>
+            <div id="mealsInstructions"></div>
         </article>
-        <article id="mealsInstructions"></article>
-        <div id="mealsVideo"></div>
     </main>
-    <button>Get a random recipe</button>
+    <nav>
+        <a href="/pages/recipes.html">
+            <i class="fas fa-utensils fa-2x"></i>
+        </a>
+        <a href="/pages/search.html">
+            <i class="fas fa-search fa-2x"></i>
+        </a>
+        <a href="/pages/search.html">
+            <i class="fas fa-bars fa-2x"></i>
+        </a>
+    </nav>
+    <footer id="mobileRecipesFooter">
+        <p>Copyright &copy; 2021 ReciPlease</p>
+        <div id="spacer"></div>
+    </footer>
     <script src='https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js'></script>
     <script src='/js/recipes.js'></script>
 </body>

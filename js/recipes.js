@@ -1,5 +1,7 @@
 function mealGenerator(e) {
     let ajax = new XMLHttpRequest();
+    let divider = document.getElementById(`divider`);
+    let tabs = document.getElementById(`tabs`);
 
     ajax.onreadystatechange = function() {
         if(this.readyState == 4 && this.status == 200) {
@@ -50,6 +52,8 @@ function mealGenerator(e) {
             let measure19 = mealsObject.meals[0].strMeasure19;
             let measure20 = mealsObject.meals[0].strMeasure20;
             let mealsInstructions = mealsObject.meals[0].strInstructions;
+            divider.style.display = `block`;
+            tabs.style.display = `grid`;
             document.getElementById(`mealsTitle`).innerText = mealsTitle;
             document.getElementById(`mealsCategory`).innerText = mealsCategory;
             document.getElementById(`mealsArea`).innerText = mealsArea;
@@ -95,19 +99,38 @@ function mealGenerator(e) {
             document.getElementById(`measure19`).innerText = measure19;
             document.getElementById(`measure20`).innerText = measure20;
             document.getElementById(`mealsInstructions`).innerText = mealsInstructions;
-            document.getElementById(`mealsVideo`).innerHTML = `<a href="${mealsVideo}">Click Here to Watch a Video Tutorial</a>`;
+            document.getElementById(`mealsVideo`).innerHTML = `<a target="_blank" href="${mealsVideo}">Watch a Video Tutorial</a>`;
         }
     }
-
     ajax.open(`GET`, `https://www.themealdb.com/api/json/v1/1/random.php`, true);
-
     ajax.send();
 }
 
-let mealsIngredients = document.getElementById(`mealsIngredientsContainer`);
+function showIngredients(e) {
+    ingredientsTitle.style.color = `#74b49b`;
+    ingredientsAndMeasurements.style.display = `grid`;
+    instructionsTitle.style.color = `#00000080`;
+    mealsInstructions.style.display = `none`;
+}
+
+function showInstructions(e) {
+    instructionsTitle.style.color = `#74b49b`;
+    ingredientsAndMeasurements.style.display = `none`;
+    ingredientsTitle.style.color = `#00000080`;
+    mealsInstructions.style.display = `block`;
+}
+
 let mealGeneratorButton = document.querySelector(`button`);
 mealGeneratorButton.addEventListener(`click`, mealGenerator);
 
+let ingredientsTitle = document.getElementById(`ingredientsTitle`);
+let ingredientsAndMeasurements = document.getElementById(`ingredientsAndMeasureContainer`);
+ingredientsTitle.addEventListener(`click`, showIngredients);
+
+let instructionsTitle = document.getElementById(`instructionsTitle`);
+let mealsInstructions = document.getElementById(`mealsInstructions`);
+instructionsTitle.addEventListener(`click`, showInstructions);
+
 let userName = Cookies.get(`Recipe API First Name`);
-let greetingMessage = `What are we cooking today, ${userName}?`;
+let greetingMessage = `What are you cooking today, ${userName}?`;
 document.getElementById(`greetingMessage`).innerText = greetingMessage;

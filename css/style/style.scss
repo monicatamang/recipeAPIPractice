@@ -2,8 +2,26 @@
 @import "../partials/footer";
 
 main {
-    @include displayGridCenter;
+    @include displayGridCenter();
     min-height: 70vh;
+
+    img {
+        margin-top: 3vh;
+        width: 70vw;
+    }
+
+    // #mealCarousel {
+    //     @include displayGridCenter();
+    //     position: relative;
+    //     margin: 5vh 0vh;
+
+    //     .foodImage {
+    //         // position: absolute;
+    //         // top: -10vh;
+    //         display: none;
+    //         width: 70vw;
+    //     }
+    // }
 
     form {
         display: grid;

@@ -1,8 +1,13 @@
-footer {
+#mobileLoginFooter, #mobileRecipesFooter {
     @include displayGridCenter;
     min-height: 10vh;
 
     p {
         font-size: 0.9rem;
     }
+}
+
+#mobileRecipesFooter {
+    min-height: 20vh;
+    margin-top: 5vh;
 }

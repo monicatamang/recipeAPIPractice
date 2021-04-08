@@ -5,9 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://kit.fontawesome.com/79c5ac932a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/search/search.css">
 </head>
 <body>
+    <header id="mobileRecipesHeader">
+        <h1>ReciPlease</h1>
+        <!-- <div class="spacer"></div> -->
+        <!-- <a href="/index.html">Logout</a> -->
+    </header>
+    <main>
+        <div id="searchBarContainer">
+            <input type="text" id="searchBar" placeholder="Search ReciPlease">
+            <button id="searchButton">Search</button>
+        </div>
+        <article id="searchResultsContainer">
+            <p id="statusMessage"></p>
+        </article>
+    </main>
+    <nav>
+        <a href="/pages/recipes.html">
+            <i class="fas fa-utensils fa-lg"></i>
+        </a>
+        <a href="/pages/search.html">
+            <i class="fas fa-search fa-lg" id="currentPage"></i>
+        </a>
+        <a href="#">
+            <i class="fas fa-bars fa-lg"></i>
+        </a>
+    </nav>
     <script src='/js/search.js'></script>
 </body>
 </html>

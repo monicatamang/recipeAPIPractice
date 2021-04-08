@@ -1,0 +1,47 @@
+@import "../partials/header";
+@import "../partials/footer";
+@import "../partials/navBar";
+
+main {
+
+    #searchBarContainer {
+        @include displayGridCenter();
+        position: relative;
+        // grid-template-columns: 2fr 1fr;
+        width: 100%;
+        height: 7vh;
+        background: rgba(211, 211, 211, 0.3);
+
+        #searchButton {
+            position: absolute;
+            top: 21%;
+            right: 7.5%;
+            width: 20vw;
+            height: 4vh;
+            border-radius: 0px 20px 20px 0px;
+            border: none;
+            font-family: $bodyFont;
+            background: $accentColor;
+            font-weight: 600;
+            color: white;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        #searchBar {
+            width: 80vw;
+            height: 4vh;
+            border: none;
+            border-radius: 20px;
+            padding-left: 5%;
+            font-family: $bodyFont;
+            border: 1px solid lightgray;
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}

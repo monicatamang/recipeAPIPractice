@@ -1,1 +1,149 @@
-/* No CSS *//*# sourceMappingURL=search.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Raleway:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  max-width: 100vw;
+}
+
+#mobileLoginHeader {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  row-gap: 20px;
+  min-height: 10vh;
+  margin-top: 5vh;
+  padding: 0% 5%;
+  text-align: center;
+}
+
+#mobileLoginHeader h1 {
+  font-family: "Playfair Display", serif;
+}
+
+#mobileLoginHeader p {
+  color: grey;
+}
+
+#mobileRecipesHeader {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  min-height: 10vh;
+}
+
+#mobileRecipesHeader h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.4rem;
+}
+
+#mobileRecipesHeader a {
+  color: #74b49b;
+  font-weight: 500;
+}
+
+#mobileLoginFooter, #mobileRecipesFooter {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  min-height: 10vh;
+}
+
+#mobileLoginFooter p, #mobileRecipesFooter p {
+  font-size: 0.9rem;
+}
+
+#mobileRecipesFooter {
+  min-height: 20vh;
+}
+
+nav {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  position: fixed;
+  bottom: -0.1vh;
+  min-height: 5vh;
+  width: 100%;
+  background: white;
+  text-align: center;
+  -webkit-box-shadow: 1px 1px 5px rgba(128, 128, 128, 0.5);
+          box-shadow: 1px 1px 5px rgba(128, 128, 128, 0.5);
+  z-index: 10;
+}
+
+nav a {
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+}
+
+nav a i {
+  width: 100%;
+  padding: 20% 0%;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+nav a #currentPage {
+  color: #74b49b;
+}
+
+nav #sidePanel {
+  position: absolute;
+  top: 0;
+  right: -101vw;
+  width: 50vw;
+  height: 100vh;
+  background: white;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+main #searchBarContainer {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  position: relative;
+  width: 100%;
+  height: 7vh;
+  background: rgba(211, 211, 211, 0.3);
+}
+
+main #searchBarContainer #searchButton {
+  position: absolute;
+  top: 21%;
+  right: 7.5%;
+  width: 20vw;
+  height: 4vh;
+  border-radius: 0px 20px 20px 0px;
+  border: none;
+  font-family: "Raleway", sans-serif;
+  background: #74b49b;
+  font-weight: 600;
+  color: white;
+}
+
+main #searchBarContainer #searchButton:focus {
+  outline: none;
+}
+
+main #searchBarContainer #searchBar {
+  width: 80vw;
+  height: 4vh;
+  border: none;
+  border-radius: 20px;
+  padding-left: 5%;
+  font-family: "Raleway", sans-serif;
+  border: 1px solid lightgray;
+}
+
+main #searchBarContainer #searchBar:focus {
+  outline: none;
+}
+/*# sourceMappingURL=search.css.map */

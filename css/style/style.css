@@ -33,8 +33,6 @@ body {
   display: -ms-grid;
   display: grid;
   place-items: center;
-  -ms-grid-columns: auto auto auto;
-      grid-template-columns: auto auto auto;
   min-height: 10vh;
 }
 

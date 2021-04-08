@@ -29,11 +29,15 @@ main {
         &:active {
             box-shadow: none;
         }
+
+        &:focus {
+            outline: none;
+        }
     }
 
     #mealsGeneratorContainer {
         @include displayGridCenter();
-        row-gap: 20px;
+        row-gap: 30px;
         min-height: 55vh;
         margin-top: 2vh;
 

@@ -1,56 +1,94 @@
-function searchByKeyword(e) {
+function searchSuccess(res) {
 
-    let ajax = new XMLHttpRequest();
+    let searchMealsResults = res.data;
+    let searchBar = document.getElementById(`searchBar`);
 
-    ajax.onreadystatechange = function() {
+    for (let i = 0; i < searchMealsResults.meals.length; i++) {
         
-        if(this.readyState === 4 && this.status === 200) {
+        // p tag that contains the message of how many search results came up for the keyword that was searched
+        document.getElementById(`numberOfResults`).innerText = `${searchMealsResults.meals.length} results for ${searchBar.value}`;
+        
+        // Container containing all search results
+        let searchResultsContainer = document.getElementById(`searchResultsContainer`);
 
-            let searchObject = JSON.parse(this.responseText);
-            console.log(searchObject.meals.length);
-            console.log(searchObject.meals);
+        // Container for each result
+        let recipeCard = document.createElement(`div`);
+        recipeCard.classList.add(`recipeCard`);
 
-            for (let i = 0; i < searchObject.meals; i++) {
-                console.log(recipeCard);
-                
-                // let numberOfResults = recipeCard.meals.length;
-                // console.log(numberOfResults);
+        recipeCard.innerHTML += `<h1>${searchMealsResults.meals[i].strMeal}</h1>
+        <p>${searchMealsResults.meals[i].strCategory}</p>
+        <p>${searchMealsResults.meals[i].strArea}</p>
+        <img class="foodImage" src="${searchMealsResults.meals[i].strMealThumb}">`;
+        
+        let ingredientsAndMeasureContainer = document.createElement(`div`);
+        ingredientsAndMeasureContainer.classList.add(`ingredientsAndMeasure`);
+        ingredientsAndMeasureContainer.innerHTML += `<p>${searchMealsResults.meals[i].strIngredient1}</p>
+        <p>${searchMealsResults.meals[i].strIngredient2}</p>
+        <p>${searchMealsResults.meals[i].strIngredient3}</p>
+        <p>${searchMealsResults.meals[i].strIngredient4}</p>
+        <p>${searchMealsResults.meals[i].strIngredient5}</p>
+        <p>${searchMealsResults.meals[i].strIngredient6}</p>
+        <p>${searchMealsResults.meals[i].strIngredient7}</p>
+        <p>${searchMealsResults.meals[i].strIngredient8}</p>
+        <p>${searchMealsResults.meals[i].strIngredient9}</p>
+        <p>${searchMealsResults.meals[i].strIngredient10}</p>
+        <p>${searchMealsResults.meals[i].strIngredient11}</p>
+        <p>${searchMealsResults.meals[i].strIngredient12}</p>
+        <p>${searchMealsResults.meals[i].strIngredient13}</p>
+        <p>${searchMealsResults.meals[i].strIngredient14}</p>
+        <p>${searchMealsResults.meals[i].strIngredient15}</p>
+        <p>${searchMealsResults.meals[i].strIngredient16}</p>
+        <p>${searchMealsResults.meals[i].strIngredient17}</p>
+        <p>${searchMealsResults.meals[i].strIngredient18}</p>
+        <p>${searchMealsResults.meals[i].strIngredient19}</p>
+        <p>${searchMealsResults.meals[i].strIngredient20}</p>
+        <p>${searchMealsResults.meals[i].strMeasure1}</p>
+        <p>${searchMealsResults.meals[i].strMeasure2}</p>
+        <p>${searchMealsResults.meals[i].strMeasure3}</p>
+        <p>${searchMealsResults.meals[i].strMeasure4}</p>
+        <p>${searchMealsResults.meals[i].strMeasure5}</p>
+        <p>${searchMealsResults.meals[i].strMeasure6}</p>
+        <p>${searchMealsResults.meals[i].strMeasure7}</p>
+        <p>${searchMealsResults.meals[i].strMeasure8}</p>
+        <p>${searchMealsResults.meals[i].strMeasure9}</p>
+        <p>${searchMealsResults.meals[i].strMeasure10}</p>
+        <p>${searchMealsResults.meals[i].strMeasure11}</p>
+        <p>${searchMealsResults.meals[i].strMeasure12}</p>
+        <p>${searchMealsResults.meals[i].strMeasure13}</p>
+        <p>${searchMealsResults.meals[i].strMeasure14}</p>
+        <p>${searchMealsResults.meals[i].strMeasure15}</p>
+        <p>${searchMealsResults.meals[i].strMeasure16}</p>
+        <p>${searchMealsResults.meals[i].strMeasure17}</p>
+        <p>${searchMealsResults.meals[i].strMeasure18}</p>
+        <p>${searchMealsResults.meals[i].strMeasure19}</p>
+        <p>${searchMealsResults.meals[i].strMeasure20}</p>`;
+        recipeCard.append(ingredientsAndMeasureContainer);
 
-                let recipeCard = document.createElement(`div`);
-                let mealTitle = `<h1>${searchObject.meals[i].strMeal}</h1>`;
-                let category = `<p>${searchObject.meals[i].strCategory}</p>`;
-                let area = `<p>${searchObject.meals[i].strArea}</p>`;
-                let mealImage = `<img src="${searchObject.meals[i].strMealThumb}">`;
-                let instructions = `<p>${searchObject.meals[i].strInstructions}</p>`;
+        let instructionsContainer = document.createElement(`div`);
+        instructionsContainer.classList.add(`instructions`);
+        instructionsContainer.innerHTML += `<p>${searchMealsResults.meals[i].strInstructions}</p>`;
+        recipeCard.append(instructionsContainer);
 
-                recipeCard.innerHTML += mealTitle;
-                recipeCard.innerHTML += category;
-                recipeCard.innerHTML += area;
-                recipeCard.innerHTML += mealImage;
-                recipeCard.innerHTML += instructions;
-
-                let searchResultsContainer = document.getElementById(`searchResultsContainer`);
-                searchResultsContainer.append(recipeCard);
-
-                // let statusMessage = document.getElementById(`statusMessage`);
-                // statusMessage.innerText = `${numberOfResults} Results`;
-                // ***Add "You have searched for {}";
-            }
-        } else if (this.readyState !== 4) {
-            let statusMessage = document.getElementById(`statusMessage`);
-            statusMessage.innerText = `Loading...`;
-        } else if (this.readyState === 4 && this.status !== 200) {
-            let statusMessage = document.getElementById(`statusMessage`);
-            statusMessage.innerText = `Sorry, nothing found.`;
-        }
+        searchResultsContainer.append(recipeCard);
     }
-
-    let keyword = document.getElementById(`searchBar`).value;
-    ajax.open(`GET`, `https://www.themealdb.com/api/json/v1/1/search.php?s=${keyword}`, true);
-
-    ajax.send();
 }
 
+function searchFailure(err) {
+    document.getElementById(`searchResults`).innerHTML = `<p>Sorry nothing found.</p>`;
+}
+
+function getSearchResults(e) {
+
+    let searchBar = document.getElementById(`searchBar`);
+
+    axios.request({
+        method: `GET`,
+        url: `https://www.themealdb.com/api/json/v1/1/search.php`,
+        params: {
+            s: searchBar.value
+        }
+    }).then(searchSuccess).catch(searchFailure);
+}
 
 let searchButton = document.getElementById(`searchButton`);
-searchButton.addEventListener(`click`, searchByKeyword);
+searchButton.addEventListener(`click`, getSearchResults);

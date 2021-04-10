@@ -147,7 +147,7 @@ main #searchBarContainer #searchBar:focus {
   outline: none;
 }
 
-main #searchBarContainer #searchResultsContainer .foodImage {
-  width: 100%;
+main #searchBarContainer #searchResultsContainer img {
+  width: 30vw;
 }
 /*# sourceMappingURL=search.css.map */

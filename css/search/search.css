@@ -112,21 +112,22 @@ main #searchBarContainer {
   position: relative;
   width: 100%;
   height: 7vh;
-  background: rgba(211, 211, 211, 0.3);
+  background: rgba(211, 211, 211, 0.2);
 }
 
 main #searchBarContainer #searchButton {
   position: absolute;
   top: 21%;
   right: 7.5%;
-  width: 20vw;
+  width: 8vh;
   height: 4vh;
-  border-radius: 0px 20px 20px 0px;
   border: none;
+  border-left: 1px solid lightgrey;
   font-family: "Raleway", sans-serif;
-  background: #74b49b;
+  background: white;
   font-weight: 600;
-  color: white;
+  color: black;
+  padding-left: 3%;
 }
 
 main #searchBarContainer #searchButton:focus {
@@ -134,20 +135,66 @@ main #searchBarContainer #searchButton:focus {
 }
 
 main #searchBarContainer #searchBar {
-  width: 80vw;
+  width: 85vw;
   height: 4vh;
-  border: none;
-  border-radius: 20px;
   padding-left: 5%;
   font-family: "Raleway", sans-serif;
-  border: 1px solid lightgray;
+  border: none;
+  border-bottom: 1px solid lightgrey;
 }
 
 main #searchBarContainer #searchBar:focus {
   outline: none;
 }
 
-main #searchBarContainer #searchResultsContainer img {
+main #numberOfResults {
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  font-size: 1rem;
+  padding: 5% 0%;
+}
+
+main #searchResultsContainer {
+  display: -ms-grid;
+  display: grid;
+  row-gap: 25px;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -webkit-column-gap: 25px;
+          column-gap: 25px;
+  place-items: center;
+  text-align: center;
+  padding: 0% 5%;
+  min-height: 70vh;
+}
+
+main #searchResultsContainer .recipeCard {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  row-gap: 10px;
+  background: rgba(244, 249, 244, 0.3);
+  -webkit-box-shadow: 1px 1px 5px lightgrey;
+          box-shadow: 1px 1px 5px lightgrey;
+  width: 100%;
+  padding: 5% 0%;
+}
+
+main #searchResultsContainer .recipeCard img {
   width: 30vw;
+  border-radius: 100%;
+}
+
+main #searchResultsContainer .recipeCard p {
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+main #searchResultsContainer h1 {
+  font-size: 1rem;
+}
+
+footer {
+  margin: 5vh 0vh;
 }
 /*# sourceMappingURL=search.css.map */

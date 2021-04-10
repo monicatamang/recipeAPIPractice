@@ -14,19 +14,14 @@ function searchSuccess(res) {
         // Container for each result
         let recipeCard = document.createElement(`article`);
         recipeCard.classList.add(`recipeCard`);
-        recipeCard.style.display = `grid`;
-        recipeCard.style.gridTemplateColumns = `auto auto`;
 
         let foodImage = document.createElement(`img`);
         foodImage.setAttribute(`src`, `${searchMealsResults.meals[i].strMealThumb}`);
-        foodImage.style.width = `30vw`;
         recipeCard.append(foodImage);
 
-        let groupTitleCategoryArea = document.createElement(`div`);
-        groupTitleCategoryArea.innerHTML += `<h1>${searchMealsResults.meals[i].strMeal}</h1>
+        recipeCard.innerHTML += `<h1>${searchMealsResults.meals[i].strMeal}</h1>
         <p>${searchMealsResults.meals[i].strCategory}</p>
         <p>${searchMealsResults.meals[i].strArea}</p>`;
-        recipeCard.append(groupTitleCategoryArea);
         
         // let ingredientsAndMeasureContainer = document.createElement(`div`);
         // ingredientsAndMeasureContainer.classList.add(`ingredientsAndMeasure`);

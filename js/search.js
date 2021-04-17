@@ -93,5 +93,72 @@ function getSearchResults(e) {
     }).then(searchSuccess).catch(searchFailure);
 }
 
+function enterfocusSearchBar(e) {
+    document.getElementById(`categoriesContainer`).style.display = `none`;
+    // document.getElementById(`searchByKeyword`).style.display = `grid`;
+}
+
+function exitfocusSearchBar(e) {
+    document.getElementById(`categoriesContainer`).style.display = `block`;
+}
+
 let searchButton = document.getElementById(`searchButton`);
 searchButton.addEventListener(`click`, getSearchResults);
+
+let searchBar = document.getElementById(`searchBar`);
+searchBar.addEventListener(`focusin`, enterfocusSearchBar);
+searchBar.addEventListener(`focusout`, exitfocusSearchBar);
+
+// STEP 2   
+function showAllItemsSuccess(res) {
+
+}
+
+function showAllItemsFailure(err) {
+
+}
+
+function showAllItems(e) {
+    axios.request({
+        method: `GET`,
+        url: `https://www.themealdb.com/api/json/v1/1/filter.php`,
+        params: {
+            c: `Beef`
+        }
+    }).then(showAllItemsSuccess).catch(showAllItemsFailure);
+}
+
+function showCategoriesFailure(err) {
+    document.getElementById(`categoriesStatus`).innerHTML = `<p>Sorry something went wrong.</p>`;
+}
+
+function showCategoriesSuccess(res) {
+
+    let categories = res.data.categories;
+
+    document.getElementById(`searchByKeyword`).style.display = `none`;
+
+    for (let i = 0; i < categories.length; i++) {
+
+        let category = categories[i].strCategory;
+        let image = categories[i].strCategoryThumb;
+        let description = categories[i].strCategoryDescription;
+
+        // PUTTING THE ONCLICK FUNCTION FOR STEP 3
+        document.getElementById(`categoriesContainer`).innerHTML += `<article class="categoriesCard" onclick="()">
+        <h1>${category}</h1>
+        <img src="${image}">
+        <p>${description}</p>
+        </article>`;
+    }
+}
+
+function showCategories(e) {
+
+    axios.request({
+        method: `GET`,
+        url: `https://www.themealdb.com/api/json/v1/1/categories.php`,
+    }).then(showCategoriesSuccess).catch(showCategoriesFailure);
+}
+
+window.addEventListener(`load`, showCategories);

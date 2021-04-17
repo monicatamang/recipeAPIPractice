@@ -5,29 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ReciPlease | Login</title>
+    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"> -->
     <link rel="stylesheet" href="/css/style/style.css">
 </head>
 <body>
     <header id="mobileLoginHeader">
         <h1>ReciPlease</h1>
-        <p>Create meals from 10,000+ recipes and become a master chef in your kitchen</p>
+        <p>Create meals from 1000+ recipes and become a master chef in your kitchen</p>
     </header>
     <main>
-        <img class="foodImage" id="foodImage1" src="/images/koreanBBQBeefBowl.png" alt="A Korean Barbeque Beef Bowl.">
-        <!-- <div id="mealsCarousel">
-            <img class="foodImage" id="foodImage1" src="/images/koreanBBQBeefBowl.png" alt="A Korean Barbeque Beef Bowl.">
-            <img class="foodImage" id="foodImage2"src="/images/salad.png" alt="A green salad made with lettuce and cherry tomatos.">
-            <img class="foodImage" id="foodImage3" src="/images/veganStirFry.png" alt="Vegetable stir fry in a bowl.">
+        <img src="/images/koreanBBQBeefBowl.png" class="foodImage" id="foodImage1" alt="A Korean Barbeque Beef Bowl.">
+        <!-- <div class="swiperContainer">
+            <div class="swiperWrapper">
+                <div class="swiperSlide">
+                    <img src="/images/koreanBBQBeefBowl.png" class="foodImage" id="foodImage1" alt="A Korean Barbeque Beef Bowl.">
+                </div>
+                <div class="swiperSlide">
+                    <img src="/images/salad.png" class="foodImage" id="foodImage2" alt="A salad.">
+                </div>
+                <div class="swiperSlide">
+                    <img src="/images/veganStirFry.png" class="foodImage" id="foodImage3" alt="A vegan stir fry.">
+                </div>
+            <div class="swiperPagination"></div>
         </div> -->
-        <form action="/pages/recipes.html">
-            <input type="text" class="loginField" id="firstNameInput" placeholder="First Name*" required>
-            <input type="submit" class="loginField" id="loginInput" value="Login" required>
+        <form action="javascript:void(0)">
+            <input type="text" class="field" id="emailInput" placeholder="Email*" required>
+            <input type="password" class="field" id="passwordInput" placeholder="Password*" required>
+            <input type="submit" id="loginButton" value="Login" required>
             <p>New user? <a href="#">Create an account</a></p>
+            <p id="loginStatus"></p>
         </form>
     </main>
     <footer id="mobileLoginFooter">
         <p>Copyright &copy; 2021 ReciPlease</p>
     </footer>
+    <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
+    <script src='https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js'></script>
     <script src='https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js'></script>
     <script src='/js/app.js'></script>
 </body>

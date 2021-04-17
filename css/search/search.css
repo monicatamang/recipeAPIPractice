@@ -117,12 +117,11 @@ main #searchBarContainer {
 
 main #searchBarContainer #searchButton {
   position: absolute;
-  top: 21%;
+  top: 14%;
   right: 7.5%;
   width: 8vh;
-  height: 4vh;
+  height: 5vh;
   border: none;
-  border-left: 1px solid lightgrey;
   font-family: "Raleway", sans-serif;
   background: white;
   font-weight: 600;
@@ -136,39 +135,44 @@ main #searchBarContainer #searchButton:focus {
 
 main #searchBarContainer #searchBar {
   width: 85vw;
-  height: 4vh;
+  height: 5vh;
   padding-left: 5%;
   font-family: "Raleway", sans-serif;
   border: none;
-  border-bottom: 1px solid lightgrey;
+  border-bottom: 1px solid #f4f9f4;
 }
 
 main #searchBarContainer #searchBar:focus {
   outline: none;
 }
 
-main #numberOfResults {
+main #searchByKeyword {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+main #searchByKeyword #numberOfResults {
   text-align: center;
   font-family: "Playfair Display", serif;
   font-size: 1rem;
   padding: 5% 0%;
 }
 
-main #searchResultsContainer {
+main #searchByKeyword #searchResultsContainer {
   display: -ms-grid;
   display: grid;
-  row-gap: 25px;
+  row-gap: 50px;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
   -webkit-column-gap: 25px;
           column-gap: 25px;
-  place-items: center;
   text-align: center;
-  padding: 0% 5%;
+  width: 80vw;
   min-height: 70vh;
 }
 
-main #searchResultsContainer .recipeCard {
+main #searchByKeyword #searchResultsContainer .recipeCard {
   display: -ms-grid;
   display: grid;
   place-items: center;
@@ -177,21 +181,54 @@ main #searchResultsContainer .recipeCard {
   -webkit-box-shadow: 1px 1px 5px lightgrey;
           box-shadow: 1px 1px 5px lightgrey;
   width: 100%;
-  padding: 5% 0%;
+  height: 100%;
+  padding: 10% 0%;
 }
 
-main #searchResultsContainer .recipeCard img {
-  width: 30vw;
+main #searchByKeyword #searchResultsContainer .recipeCard img {
+  width: 20vw;
   border-radius: 100%;
 }
 
-main #searchResultsContainer .recipeCard p {
+main #searchByKeyword #searchResultsContainer .recipeCard p {
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 0.7rem;
 }
 
-main #searchResultsContainer h1 {
-  font-size: 1rem;
+main #searchByKeyword #searchResultsContainer h1 {
+  font-size: 0.7rem;
+  padding: 0% 10%;
+}
+
+main #categoriesContainer {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  row-gap: 30px;
+  padding: 0% 10%;
+}
+
+main #categoriesContainer article {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  row-gap: 40px;
+  background: rgba(244, 249, 244, 0.3);
+  -webkit-box-shadow: 1px 1px 5px lightgrey;
+          box-shadow: 1px 1px 5px lightgrey;
+  padding: 10%;
+}
+
+main #categoriesContainer article img {
+  width: 45vw;
+}
+
+main #categoriesContainer article h1 {
+  font-size: 1.3rem;
+}
+
+main #categoriesContainer article p {
+  font-size: 0.8rem;
 }
 
 footer {

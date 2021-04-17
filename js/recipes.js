@@ -120,12 +120,12 @@ function showInstructions(e) {
     mealsInstructions.style.display = `block`;
 }
 
-function showSidePanel(e) {
-    hamburgerMenu.style.color = `#74b49b`;
-}
+// function showSidePanel(e) {
+//     hamburgerMenu.style.color = `#74b49b`;
+// }
 
-let userName = Cookies.get(`Recipe API First Name`);
-let greetingMessage = `What are you cooking today, ${userName}?`;
+let userEmail = Cookies.get(`Recipe API First Name`);
+let greetingMessage = `What are you cooking today, ${userEmail}?`;
 document.getElementById(`greetingMessage`).innerText = greetingMessage;
 
 let mealGeneratorButton = document.querySelector(`button`);
@@ -140,4 +140,4 @@ let mealsInstructions = document.getElementById(`mealsInstructions`);
 instructionsTitle.addEventListener(`click`, showInstructions);
 
 let hamburgerMenu = document.getElementById(`hamburgerMenu`);
-hamburgerMenu.addEventListener(`click`, showSidePanel);
+// hamburgerMenu.addEventListener(`click`, showSidePanel);

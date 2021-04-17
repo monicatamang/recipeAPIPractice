@@ -1,13 +1,45 @@
-function userFirstName(e) {
-    let firstName = document.getElementById(`firstNameInput`).value;
-    Cookies.set(`Recipe API First Name`, firstName);
+function changePage(e) {
+    window.location = `/pages/recipe.html`;
 }
 
-let loginButton = document.getElementById(`loginInput`);
-loginButton.addEventListener(`click`, userFirstName);
+function userLoginSuccess(res) {
 
-// ----------- Notes ----------
-// I orginally had defined 'firstName' above line 6 and tried to use that variable to create a cookie. This had resulted in an error
-// I had added an event to the signup button where when clicked it an event will occur
-// However, when I called the function, it looks like I was referencing the variable first without declaring it which then resulted in an error
-// I should be declaring the variable first, then referencing it 
+    console.log(res.data);
+
+    Cookies.set(`Recipe API Token`, res.data.token);
+    Cookies.set(`Recipe API First Name`, document.getElementById(`emailInput`).value);
+
+    setTimeout(changePage, 1000);
+}
+
+function userLoginFailure(err) {
+    document.getElementById(`loginStatus`).innerText = `Invalid email or password. Please try again.`;
+}
+
+function userLogin(e) {
+
+    document.getElementById(`loginStatus`).innerText = `Verifying Credentials...`;
+
+    axios.request({
+        method: `POST`,
+        url: `https://reqres.in/api/login`,
+        headers: {
+            "Content-Type": "application/json"
+        },
+        data: {
+            email: document.getElementById(`emailInput`).value,
+            password: document.getElementById(`passwordInput`).value
+        }
+    }).then(userLoginSuccess).catch(userLoginFailure);
+}
+
+let loginButton = document.getElementById(`loginButton`);
+loginButton.addEventListener(`click`, userLogin);
+
+// const swiper = new Swiper(`.swiperContainer`, {
+//     direction: `horizontal`,
+//     pagination: {
+//         el: `swiperPagination`,
+//         type: `bullets`
+//     }
+// });

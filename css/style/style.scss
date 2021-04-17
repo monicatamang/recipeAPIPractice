@@ -7,40 +7,39 @@ main {
 
     img {
         margin-top: 3vh;
-        width: 70vw;
+        width: 60vw;
     }
 
-    // #mealCarousel {
-    //     @include displayGridCenter();
-    //     position: relative;
-    //     margin: 5vh 0vh;
-
-    //     .foodImage {
-    //         // position: absolute;
-    //         // top: -10vh;
-    //         display: none;
-    //         width: 70vw;
-    //     }
+    // .swiperContainer {
+    //     display: grid;
+    //     place-items: center;
+    //     width: 100%;
+    //     height: 300px;
     // }
     
     form {
         display: grid;
         align-self: end;
         row-gap: 20px;
-        margin-bottom: 5vh;
+        text-align: center;
+        width: 65vw;
 
-        .loginField {
+        .field, #loginButton {
             font-family: $bodyFont;
             font-size: 1rem;
             padding: 5%;
             border-radius: 3px;
-        }
-
-        #firstNameInput {
             border: 1px solid $accentColor;
         }
 
-        #loginInput {
+        #emailInput, #passwordInput {
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        #loginButton {
             font-weight: 600;
             color: white;
             background: $accentColor;
@@ -50,12 +49,21 @@ main {
             &:active {
                 box-shadow: none;
             }
+
+            &:focus {
+                outline: none;
+            }
         }
 
         p {
             a {
                 color: $accentColor;
             }
+        }
+
+        #loginStatus {
+            font-size: 1rem;
+            font-weight: bold;
         }
     }
 }

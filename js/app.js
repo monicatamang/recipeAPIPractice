@@ -1,5 +1,5 @@
 function changePage(e) {
-    window.location = `/pages/recipe.html`;
+    window.location = `/pages/recipes.html`;
 }
 
 function userLoginSuccess(res) {
